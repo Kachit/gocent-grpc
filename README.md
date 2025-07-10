@@ -16,7 +16,8 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/kachit/centrifugo-grpc-api"
+	pb "github.com/kachit/centrifugo-grpc-api/pkg"
+	"github.com/kachit/centrifugo-grpc-api/auth"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
@@ -26,7 +27,7 @@ func main() {
 	conn, err := grpc.NewClient(
 		"127.0.0.1:10000",
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
-		grpc.WithPerRPCCredentials(pb.KeyAuth{Key: "qwerty"}),
+		grpc.WithPerRPCCredentials(auth.KeyAuth{Key: "qwerty"}),
 	)
 	if err != nil {
 		log.Fatalln(err)
@@ -53,5 +54,10 @@ https://raw.githubusercontent.com/centrifugal/centrifugo/master/internal/apiprot
 
 ## ProtoGen Golang
 ```shell
-protoc --go_out=. --go-grpc_out=. --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
+protoc --go_out=./pkg --go-grpc_out=./pkg --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
+```
+
+## Linters ##
+```bash
+golangci-lint run
 ```
