@@ -1,0 +1,35 @@
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - ineffassign
+    - typecheck
+    - bodyclose
+    - gosec
+    - unconvert
+    - dupl
+    - goconst
+    - gocyclo
+    - gocognit
+    - gofmt
+    - misspell
+    - dogsled
+    - nakedret
+    - prealloc
+    - gocritic
+    - funlen
+    - lll
+    - nlreturn
+    - wsl
+
+linters-settings:
+  funlen:
+    lines: 100
+    statements: 70
+
+  exclude-dirs:
+    - tmp
