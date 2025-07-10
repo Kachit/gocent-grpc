@@ -54,7 +54,7 @@ https://raw.githubusercontent.com/centrifugal/centrifugo/master/internal/apiprot
 
 ## ProtoGen Golang
 ```shell
-protoc --go_out=./pkg --go-grpc_out=./pkg --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
+protoc --go_out=. --go-grpc_out=. --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
 ```
 
 ## Linters ##
