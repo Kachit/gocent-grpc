@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.27.3
-// source: api.proto
+// source: proto/api.proto
 
 package apiproto
 
@@ -1333,5 +1333,5 @@ var CentrifugoApi_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
+	Metadata: "proto/api.proto",
 }
