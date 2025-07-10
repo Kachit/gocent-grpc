@@ -33,3 +33,4 @@ linters-settings:
 
   exclude-dirs:
     - tmp
+    - proto

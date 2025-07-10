@@ -5,13 +5,14 @@ package apiproto
 
 import (
 	context "context"
+	"github.com/kachit/centrifugo-grpc-api/pkg"
 	grpc "google.golang.org/grpc"
 	sync "sync"
 )
 
 // Ensure, that CentrifugoApiClientMock does implement CentrifugoApiClient.
 // If this is not the case, regenerate this file with moq.
-var _ CentrifugoApiClient = &CentrifugoApiClientMock{}
+var _ pkg.CentrifugoApiClient = &CentrifugoApiClientMock{}
 
 // CentrifugoApiClientMock is a mock implementation of CentrifugoApiClient.
 //
@@ -126,103 +127,103 @@ var _ CentrifugoApiClient = &CentrifugoApiClientMock{}
 //	}
 type CentrifugoApiClientMock struct {
 	// BatchFunc mocks the Batch method.
-	BatchFunc func(ctx context.Context, in *BatchRequest, opts ...grpc.CallOption) (*BatchResponse, error)
+	BatchFunc func(ctx context.Context, in *pkg.BatchRequest, opts ...grpc.CallOption) (*pkg.BatchResponse, error)
 
 	// BlockUserFunc mocks the BlockUser method.
-	BlockUserFunc func(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error)
+	BlockUserFunc func(ctx context.Context, in *pkg.BlockUserRequest, opts ...grpc.CallOption) (*pkg.BlockUserResponse, error)
 
 	// BroadcastFunc mocks the Broadcast method.
-	BroadcastFunc func(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error)
+	BroadcastFunc func(ctx context.Context, in *pkg.BroadcastRequest, opts ...grpc.CallOption) (*pkg.BroadcastResponse, error)
 
 	// CancelPushFunc mocks the CancelPush method.
-	CancelPushFunc func(ctx context.Context, in *CancelPushRequest, opts ...grpc.CallOption) (*CancelPushResponse, error)
+	CancelPushFunc func(ctx context.Context, in *pkg.CancelPushRequest, opts ...grpc.CallOption) (*pkg.CancelPushResponse, error)
 
 	// ChannelsFunc mocks the Channels method.
-	ChannelsFunc func(ctx context.Context, in *ChannelsRequest, opts ...grpc.CallOption) (*ChannelsResponse, error)
+	ChannelsFunc func(ctx context.Context, in *pkg.ChannelsRequest, opts ...grpc.CallOption) (*pkg.ChannelsResponse, error)
 
 	// ConnectionsFunc mocks the Connections method.
-	ConnectionsFunc func(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error)
+	ConnectionsFunc func(ctx context.Context, in *pkg.ConnectionsRequest, opts ...grpc.CallOption) (*pkg.ConnectionsResponse, error)
 
 	// DeleteUserStatusFunc mocks the DeleteUserStatus method.
-	DeleteUserStatusFunc func(ctx context.Context, in *DeleteUserStatusRequest, opts ...grpc.CallOption) (*DeleteUserStatusResponse, error)
+	DeleteUserStatusFunc func(ctx context.Context, in *pkg.DeleteUserStatusRequest, opts ...grpc.CallOption) (*pkg.DeleteUserStatusResponse, error)
 
 	// DeviceListFunc mocks the DeviceList method.
-	DeviceListFunc func(ctx context.Context, in *DeviceListRequest, opts ...grpc.CallOption) (*DeviceListResponse, error)
+	DeviceListFunc func(ctx context.Context, in *pkg.DeviceListRequest, opts ...grpc.CallOption) (*pkg.DeviceListResponse, error)
 
 	// DeviceRegisterFunc mocks the DeviceRegister method.
-	DeviceRegisterFunc func(ctx context.Context, in *DeviceRegisterRequest, opts ...grpc.CallOption) (*DeviceRegisterResponse, error)
+	DeviceRegisterFunc func(ctx context.Context, in *pkg.DeviceRegisterRequest, opts ...grpc.CallOption) (*pkg.DeviceRegisterResponse, error)
 
 	// DeviceRemoveFunc mocks the DeviceRemove method.
-	DeviceRemoveFunc func(ctx context.Context, in *DeviceRemoveRequest, opts ...grpc.CallOption) (*DeviceRemoveResponse, error)
+	DeviceRemoveFunc func(ctx context.Context, in *pkg.DeviceRemoveRequest, opts ...grpc.CallOption) (*pkg.DeviceRemoveResponse, error)
 
 	// DeviceTopicListFunc mocks the DeviceTopicList method.
-	DeviceTopicListFunc func(ctx context.Context, in *DeviceTopicListRequest, opts ...grpc.CallOption) (*DeviceTopicListResponse, error)
+	DeviceTopicListFunc func(ctx context.Context, in *pkg.DeviceTopicListRequest, opts ...grpc.CallOption) (*pkg.DeviceTopicListResponse, error)
 
 	// DeviceTopicUpdateFunc mocks the DeviceTopicUpdate method.
-	DeviceTopicUpdateFunc func(ctx context.Context, in *DeviceTopicUpdateRequest, opts ...grpc.CallOption) (*DeviceTopicUpdateResponse, error)
+	DeviceTopicUpdateFunc func(ctx context.Context, in *pkg.DeviceTopicUpdateRequest, opts ...grpc.CallOption) (*pkg.DeviceTopicUpdateResponse, error)
 
 	// DeviceUpdateFunc mocks the DeviceUpdate method.
-	DeviceUpdateFunc func(ctx context.Context, in *DeviceUpdateRequest, opts ...grpc.CallOption) (*DeviceUpdateResponse, error)
+	DeviceUpdateFunc func(ctx context.Context, in *pkg.DeviceUpdateRequest, opts ...grpc.CallOption) (*pkg.DeviceUpdateResponse, error)
 
 	// DisconnectFunc mocks the Disconnect method.
-	DisconnectFunc func(ctx context.Context, in *DisconnectRequest, opts ...grpc.CallOption) (*DisconnectResponse, error)
+	DisconnectFunc func(ctx context.Context, in *pkg.DisconnectRequest, opts ...grpc.CallOption) (*pkg.DisconnectResponse, error)
 
 	// GetUserStatusFunc mocks the GetUserStatus method.
-	GetUserStatusFunc func(ctx context.Context, in *GetUserStatusRequest, opts ...grpc.CallOption) (*GetUserStatusResponse, error)
+	GetUserStatusFunc func(ctx context.Context, in *pkg.GetUserStatusRequest, opts ...grpc.CallOption) (*pkg.GetUserStatusResponse, error)
 
 	// HistoryFunc mocks the History method.
-	HistoryFunc func(ctx context.Context, in *HistoryRequest, opts ...grpc.CallOption) (*HistoryResponse, error)
+	HistoryFunc func(ctx context.Context, in *pkg.HistoryRequest, opts ...grpc.CallOption) (*pkg.HistoryResponse, error)
 
 	// HistoryRemoveFunc mocks the HistoryRemove method.
-	HistoryRemoveFunc func(ctx context.Context, in *HistoryRemoveRequest, opts ...grpc.CallOption) (*HistoryRemoveResponse, error)
+	HistoryRemoveFunc func(ctx context.Context, in *pkg.HistoryRemoveRequest, opts ...grpc.CallOption) (*pkg.HistoryRemoveResponse, error)
 
 	// InfoFunc mocks the Info method.
-	InfoFunc func(ctx context.Context, in *InfoRequest, opts ...grpc.CallOption) (*InfoResponse, error)
+	InfoFunc func(ctx context.Context, in *pkg.InfoRequest, opts ...grpc.CallOption) (*pkg.InfoResponse, error)
 
 	// InvalidateUserTokensFunc mocks the InvalidateUserTokens method.
-	InvalidateUserTokensFunc func(ctx context.Context, in *InvalidateUserTokensRequest, opts ...grpc.CallOption) (*InvalidateUserTokensResponse, error)
+	InvalidateUserTokensFunc func(ctx context.Context, in *pkg.InvalidateUserTokensRequest, opts ...grpc.CallOption) (*pkg.InvalidateUserTokensResponse, error)
 
 	// PresenceFunc mocks the Presence method.
-	PresenceFunc func(ctx context.Context, in *PresenceRequest, opts ...grpc.CallOption) (*PresenceResponse, error)
+	PresenceFunc func(ctx context.Context, in *pkg.PresenceRequest, opts ...grpc.CallOption) (*pkg.PresenceResponse, error)
 
 	// PresenceStatsFunc mocks the PresenceStats method.
-	PresenceStatsFunc func(ctx context.Context, in *PresenceStatsRequest, opts ...grpc.CallOption) (*PresenceStatsResponse, error)
+	PresenceStatsFunc func(ctx context.Context, in *pkg.PresenceStatsRequest, opts ...grpc.CallOption) (*pkg.PresenceStatsResponse, error)
 
 	// PublishFunc mocks the Publish method.
-	PublishFunc func(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*PublishResponse, error)
+	PublishFunc func(ctx context.Context, in *pkg.PublishRequest, opts ...grpc.CallOption) (*pkg.PublishResponse, error)
 
 	// RPCFunc mocks the RPC method.
-	RPCFunc func(ctx context.Context, in *RPCRequest, opts ...grpc.CallOption) (*RPCResponse, error)
+	RPCFunc func(ctx context.Context, in *pkg.RPCRequest, opts ...grpc.CallOption) (*pkg.RPCResponse, error)
 
 	// RefreshFunc mocks the Refresh method.
-	RefreshFunc func(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error)
+	RefreshFunc func(ctx context.Context, in *pkg.RefreshRequest, opts ...grpc.CallOption) (*pkg.RefreshResponse, error)
 
 	// RevokeTokenFunc mocks the RevokeToken method.
-	RevokeTokenFunc func(ctx context.Context, in *RevokeTokenRequest, opts ...grpc.CallOption) (*RevokeTokenResponse, error)
+	RevokeTokenFunc func(ctx context.Context, in *pkg.RevokeTokenRequest, opts ...grpc.CallOption) (*pkg.RevokeTokenResponse, error)
 
 	// SendPushNotificationFunc mocks the SendPushNotification method.
-	SendPushNotificationFunc func(ctx context.Context, in *SendPushNotificationRequest, opts ...grpc.CallOption) (*SendPushNotificationResponse, error)
+	SendPushNotificationFunc func(ctx context.Context, in *pkg.SendPushNotificationRequest, opts ...grpc.CallOption) (*pkg.SendPushNotificationResponse, error)
 
 	// SubscribeFunc mocks the Subscribe method.
-	SubscribeFunc func(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*SubscribeResponse, error)
+	SubscribeFunc func(ctx context.Context, in *pkg.SubscribeRequest, opts ...grpc.CallOption) (*pkg.SubscribeResponse, error)
 
 	// UnblockUserFunc mocks the UnblockUser method.
-	UnblockUserFunc func(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error)
+	UnblockUserFunc func(ctx context.Context, in *pkg.UnblockUserRequest, opts ...grpc.CallOption) (*pkg.UnblockUserResponse, error)
 
 	// UnsubscribeFunc mocks the Unsubscribe method.
-	UnsubscribeFunc func(ctx context.Context, in *UnsubscribeRequest, opts ...grpc.CallOption) (*UnsubscribeResponse, error)
+	UnsubscribeFunc func(ctx context.Context, in *pkg.UnsubscribeRequest, opts ...grpc.CallOption) (*pkg.UnsubscribeResponse, error)
 
 	// UpdatePushStatusFunc mocks the UpdatePushStatus method.
-	UpdatePushStatusFunc func(ctx context.Context, in *UpdatePushStatusRequest, opts ...grpc.CallOption) (*UpdatePushStatusResponse, error)
+	UpdatePushStatusFunc func(ctx context.Context, in *pkg.UpdatePushStatusRequest, opts ...grpc.CallOption) (*pkg.UpdatePushStatusResponse, error)
 
 	// UpdateUserStatusFunc mocks the UpdateUserStatus method.
-	UpdateUserStatusFunc func(ctx context.Context, in *UpdateUserStatusRequest, opts ...grpc.CallOption) (*UpdateUserStatusResponse, error)
+	UpdateUserStatusFunc func(ctx context.Context, in *pkg.UpdateUserStatusRequest, opts ...grpc.CallOption) (*pkg.UpdateUserStatusResponse, error)
 
 	// UserTopicListFunc mocks the UserTopicList method.
-	UserTopicListFunc func(ctx context.Context, in *UserTopicListRequest, opts ...grpc.CallOption) (*UserTopicListResponse, error)
+	UserTopicListFunc func(ctx context.Context, in *pkg.UserTopicListRequest, opts ...grpc.CallOption) (*pkg.UserTopicListResponse, error)
 
 	// UserTopicUpdateFunc mocks the UserTopicUpdate method.
-	UserTopicUpdateFunc func(ctx context.Context, in *UserTopicUpdateRequest, opts ...grpc.CallOption) (*UserTopicUpdateResponse, error)
+	UserTopicUpdateFunc func(ctx context.Context, in *pkg.UserTopicUpdateRequest, opts ...grpc.CallOption) (*pkg.UserTopicUpdateResponse, error)
 
 	// calls tracks calls to the methods.
 	calls struct {
@@ -231,7 +232,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *BatchRequest
+			In *pkg.BatchRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -240,7 +241,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *BlockUserRequest
+			In *pkg.BlockUserRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -249,7 +250,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *BroadcastRequest
+			In *pkg.BroadcastRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -258,7 +259,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *CancelPushRequest
+			In *pkg.CancelPushRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -267,7 +268,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *ChannelsRequest
+			In *pkg.ChannelsRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -276,7 +277,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *ConnectionsRequest
+			In *pkg.ConnectionsRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -285,7 +286,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeleteUserStatusRequest
+			In *pkg.DeleteUserStatusRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -294,7 +295,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceListRequest
+			In *pkg.DeviceListRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -303,7 +304,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceRegisterRequest
+			In *pkg.DeviceRegisterRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -312,7 +313,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceRemoveRequest
+			In *pkg.DeviceRemoveRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -321,7 +322,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceTopicListRequest
+			In *pkg.DeviceTopicListRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -330,7 +331,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceTopicUpdateRequest
+			In *pkg.DeviceTopicUpdateRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -339,7 +340,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DeviceUpdateRequest
+			In *pkg.DeviceUpdateRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -348,7 +349,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *DisconnectRequest
+			In *pkg.DisconnectRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -357,7 +358,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *GetUserStatusRequest
+			In *pkg.GetUserStatusRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -366,7 +367,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *HistoryRequest
+			In *pkg.HistoryRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -375,7 +376,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *HistoryRemoveRequest
+			In *pkg.HistoryRemoveRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -384,7 +385,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *InfoRequest
+			In *pkg.InfoRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -393,7 +394,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *InvalidateUserTokensRequest
+			In *pkg.InvalidateUserTokensRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -402,7 +403,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *PresenceRequest
+			In *pkg.PresenceRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -411,7 +412,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *PresenceStatsRequest
+			In *pkg.PresenceStatsRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -420,7 +421,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *PublishRequest
+			In *pkg.PublishRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -429,7 +430,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *RPCRequest
+			In *pkg.RPCRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -438,7 +439,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *RefreshRequest
+			In *pkg.RefreshRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -447,7 +448,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *RevokeTokenRequest
+			In *pkg.RevokeTokenRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -456,7 +457,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *SendPushNotificationRequest
+			In *pkg.SendPushNotificationRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -465,7 +466,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *SubscribeRequest
+			In *pkg.SubscribeRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -474,7 +475,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UnblockUserRequest
+			In *pkg.UnblockUserRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -483,7 +484,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UnsubscribeRequest
+			In *pkg.UnsubscribeRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -492,7 +493,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UpdatePushStatusRequest
+			In *pkg.UpdatePushStatusRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -501,7 +502,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UpdateUserStatusRequest
+			In *pkg.UpdateUserStatusRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -510,7 +511,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UserTopicListRequest
+			In *pkg.UserTopicListRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -519,7 +520,7 @@ type CentrifugoApiClientMock struct {
 			// Ctx is the ctx argument value.
 			Ctx context.Context
 			// In is the in argument value.
-			In *UserTopicUpdateRequest
+			In *pkg.UserTopicUpdateRequest
 			// Opts is the opts argument value.
 			Opts []grpc.CallOption
 		}
@@ -560,13 +561,13 @@ type CentrifugoApiClientMock struct {
 }
 
 // Batch calls BatchFunc.
-func (mock *CentrifugoApiClientMock) Batch(ctx context.Context, in *BatchRequest, opts ...grpc.CallOption) (*BatchResponse, error) {
+func (mock *CentrifugoApiClientMock) Batch(ctx context.Context, in *pkg.BatchRequest, opts ...grpc.CallOption) (*pkg.BatchResponse, error) {
 	if mock.BatchFunc == nil {
 		panic("CentrifugoApiClientMock.BatchFunc: method is nil but CentrifugoApiClient.Batch was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *BatchRequest
+		In   *pkg.BatchRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -585,12 +586,12 @@ func (mock *CentrifugoApiClientMock) Batch(ctx context.Context, in *BatchRequest
 //	len(mockedCentrifugoApiClient.BatchCalls())
 func (mock *CentrifugoApiClientMock) BatchCalls() []struct {
 	Ctx  context.Context
-	In   *BatchRequest
+	In   *pkg.BatchRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *BatchRequest
+		In   *pkg.BatchRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockBatch.RLock()
@@ -600,13 +601,13 @@ func (mock *CentrifugoApiClientMock) BatchCalls() []struct {
 }
 
 // BlockUser calls BlockUserFunc.
-func (mock *CentrifugoApiClientMock) BlockUser(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error) {
+func (mock *CentrifugoApiClientMock) BlockUser(ctx context.Context, in *pkg.BlockUserRequest, opts ...grpc.CallOption) (*pkg.BlockUserResponse, error) {
 	if mock.BlockUserFunc == nil {
 		panic("CentrifugoApiClientMock.BlockUserFunc: method is nil but CentrifugoApiClient.BlockUser was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *BlockUserRequest
+		In   *pkg.BlockUserRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -625,12 +626,12 @@ func (mock *CentrifugoApiClientMock) BlockUser(ctx context.Context, in *BlockUse
 //	len(mockedCentrifugoApiClient.BlockUserCalls())
 func (mock *CentrifugoApiClientMock) BlockUserCalls() []struct {
 	Ctx  context.Context
-	In   *BlockUserRequest
+	In   *pkg.BlockUserRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *BlockUserRequest
+		In   *pkg.BlockUserRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockBlockUser.RLock()
@@ -640,13 +641,13 @@ func (mock *CentrifugoApiClientMock) BlockUserCalls() []struct {
 }
 
 // Broadcast calls BroadcastFunc.
-func (mock *CentrifugoApiClientMock) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
+func (mock *CentrifugoApiClientMock) Broadcast(ctx context.Context, in *pkg.BroadcastRequest, opts ...grpc.CallOption) (*pkg.BroadcastResponse, error) {
 	if mock.BroadcastFunc == nil {
 		panic("CentrifugoApiClientMock.BroadcastFunc: method is nil but CentrifugoApiClient.Broadcast was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *BroadcastRequest
+		In   *pkg.BroadcastRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -665,12 +666,12 @@ func (mock *CentrifugoApiClientMock) Broadcast(ctx context.Context, in *Broadcas
 //	len(mockedCentrifugoApiClient.BroadcastCalls())
 func (mock *CentrifugoApiClientMock) BroadcastCalls() []struct {
 	Ctx  context.Context
-	In   *BroadcastRequest
+	In   *pkg.BroadcastRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *BroadcastRequest
+		In   *pkg.BroadcastRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockBroadcast.RLock()
@@ -680,13 +681,13 @@ func (mock *CentrifugoApiClientMock) BroadcastCalls() []struct {
 }
 
 // CancelPush calls CancelPushFunc.
-func (mock *CentrifugoApiClientMock) CancelPush(ctx context.Context, in *CancelPushRequest, opts ...grpc.CallOption) (*CancelPushResponse, error) {
+func (mock *CentrifugoApiClientMock) CancelPush(ctx context.Context, in *pkg.CancelPushRequest, opts ...grpc.CallOption) (*pkg.CancelPushResponse, error) {
 	if mock.CancelPushFunc == nil {
 		panic("CentrifugoApiClientMock.CancelPushFunc: method is nil but CentrifugoApiClient.CancelPush was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *CancelPushRequest
+		In   *pkg.CancelPushRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -705,12 +706,12 @@ func (mock *CentrifugoApiClientMock) CancelPush(ctx context.Context, in *CancelP
 //	len(mockedCentrifugoApiClient.CancelPushCalls())
 func (mock *CentrifugoApiClientMock) CancelPushCalls() []struct {
 	Ctx  context.Context
-	In   *CancelPushRequest
+	In   *pkg.CancelPushRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *CancelPushRequest
+		In   *pkg.CancelPushRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockCancelPush.RLock()
@@ -720,13 +721,13 @@ func (mock *CentrifugoApiClientMock) CancelPushCalls() []struct {
 }
 
 // Channels calls ChannelsFunc.
-func (mock *CentrifugoApiClientMock) Channels(ctx context.Context, in *ChannelsRequest, opts ...grpc.CallOption) (*ChannelsResponse, error) {
+func (mock *CentrifugoApiClientMock) Channels(ctx context.Context, in *pkg.ChannelsRequest, opts ...grpc.CallOption) (*pkg.ChannelsResponse, error) {
 	if mock.ChannelsFunc == nil {
 		panic("CentrifugoApiClientMock.ChannelsFunc: method is nil but CentrifugoApiClient.Channels was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *ChannelsRequest
+		In   *pkg.ChannelsRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -745,12 +746,12 @@ func (mock *CentrifugoApiClientMock) Channels(ctx context.Context, in *ChannelsR
 //	len(mockedCentrifugoApiClient.ChannelsCalls())
 func (mock *CentrifugoApiClientMock) ChannelsCalls() []struct {
 	Ctx  context.Context
-	In   *ChannelsRequest
+	In   *pkg.ChannelsRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *ChannelsRequest
+		In   *pkg.ChannelsRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockChannels.RLock()
@@ -760,13 +761,13 @@ func (mock *CentrifugoApiClientMock) ChannelsCalls() []struct {
 }
 
 // Connections calls ConnectionsFunc.
-func (mock *CentrifugoApiClientMock) Connections(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error) {
+func (mock *CentrifugoApiClientMock) Connections(ctx context.Context, in *pkg.ConnectionsRequest, opts ...grpc.CallOption) (*pkg.ConnectionsResponse, error) {
 	if mock.ConnectionsFunc == nil {
 		panic("CentrifugoApiClientMock.ConnectionsFunc: method is nil but CentrifugoApiClient.Connections was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *ConnectionsRequest
+		In   *pkg.ConnectionsRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -785,12 +786,12 @@ func (mock *CentrifugoApiClientMock) Connections(ctx context.Context, in *Connec
 //	len(mockedCentrifugoApiClient.ConnectionsCalls())
 func (mock *CentrifugoApiClientMock) ConnectionsCalls() []struct {
 	Ctx  context.Context
-	In   *ConnectionsRequest
+	In   *pkg.ConnectionsRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *ConnectionsRequest
+		In   *pkg.ConnectionsRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockConnections.RLock()
@@ -800,13 +801,13 @@ func (mock *CentrifugoApiClientMock) ConnectionsCalls() []struct {
 }
 
 // DeleteUserStatus calls DeleteUserStatusFunc.
-func (mock *CentrifugoApiClientMock) DeleteUserStatus(ctx context.Context, in *DeleteUserStatusRequest, opts ...grpc.CallOption) (*DeleteUserStatusResponse, error) {
+func (mock *CentrifugoApiClientMock) DeleteUserStatus(ctx context.Context, in *pkg.DeleteUserStatusRequest, opts ...grpc.CallOption) (*pkg.DeleteUserStatusResponse, error) {
 	if mock.DeleteUserStatusFunc == nil {
 		panic("CentrifugoApiClientMock.DeleteUserStatusFunc: method is nil but CentrifugoApiClient.DeleteUserStatus was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeleteUserStatusRequest
+		In   *pkg.DeleteUserStatusRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -825,12 +826,12 @@ func (mock *CentrifugoApiClientMock) DeleteUserStatus(ctx context.Context, in *D
 //	len(mockedCentrifugoApiClient.DeleteUserStatusCalls())
 func (mock *CentrifugoApiClientMock) DeleteUserStatusCalls() []struct {
 	Ctx  context.Context
-	In   *DeleteUserStatusRequest
+	In   *pkg.DeleteUserStatusRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeleteUserStatusRequest
+		In   *pkg.DeleteUserStatusRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeleteUserStatus.RLock()
@@ -840,13 +841,13 @@ func (mock *CentrifugoApiClientMock) DeleteUserStatusCalls() []struct {
 }
 
 // DeviceList calls DeviceListFunc.
-func (mock *CentrifugoApiClientMock) DeviceList(ctx context.Context, in *DeviceListRequest, opts ...grpc.CallOption) (*DeviceListResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceList(ctx context.Context, in *pkg.DeviceListRequest, opts ...grpc.CallOption) (*pkg.DeviceListResponse, error) {
 	if mock.DeviceListFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceListFunc: method is nil but CentrifugoApiClient.DeviceList was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceListRequest
+		In   *pkg.DeviceListRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -865,12 +866,12 @@ func (mock *CentrifugoApiClientMock) DeviceList(ctx context.Context, in *DeviceL
 //	len(mockedCentrifugoApiClient.DeviceListCalls())
 func (mock *CentrifugoApiClientMock) DeviceListCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceListRequest
+	In   *pkg.DeviceListRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceListRequest
+		In   *pkg.DeviceListRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceList.RLock()
@@ -880,13 +881,13 @@ func (mock *CentrifugoApiClientMock) DeviceListCalls() []struct {
 }
 
 // DeviceRegister calls DeviceRegisterFunc.
-func (mock *CentrifugoApiClientMock) DeviceRegister(ctx context.Context, in *DeviceRegisterRequest, opts ...grpc.CallOption) (*DeviceRegisterResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceRegister(ctx context.Context, in *pkg.DeviceRegisterRequest, opts ...grpc.CallOption) (*pkg.DeviceRegisterResponse, error) {
 	if mock.DeviceRegisterFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceRegisterFunc: method is nil but CentrifugoApiClient.DeviceRegister was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceRegisterRequest
+		In   *pkg.DeviceRegisterRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -905,12 +906,12 @@ func (mock *CentrifugoApiClientMock) DeviceRegister(ctx context.Context, in *Dev
 //	len(mockedCentrifugoApiClient.DeviceRegisterCalls())
 func (mock *CentrifugoApiClientMock) DeviceRegisterCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceRegisterRequest
+	In   *pkg.DeviceRegisterRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceRegisterRequest
+		In   *pkg.DeviceRegisterRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceRegister.RLock()
@@ -920,13 +921,13 @@ func (mock *CentrifugoApiClientMock) DeviceRegisterCalls() []struct {
 }
 
 // DeviceRemove calls DeviceRemoveFunc.
-func (mock *CentrifugoApiClientMock) DeviceRemove(ctx context.Context, in *DeviceRemoveRequest, opts ...grpc.CallOption) (*DeviceRemoveResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceRemove(ctx context.Context, in *pkg.DeviceRemoveRequest, opts ...grpc.CallOption) (*pkg.DeviceRemoveResponse, error) {
 	if mock.DeviceRemoveFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceRemoveFunc: method is nil but CentrifugoApiClient.DeviceRemove was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceRemoveRequest
+		In   *pkg.DeviceRemoveRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -945,12 +946,12 @@ func (mock *CentrifugoApiClientMock) DeviceRemove(ctx context.Context, in *Devic
 //	len(mockedCentrifugoApiClient.DeviceRemoveCalls())
 func (mock *CentrifugoApiClientMock) DeviceRemoveCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceRemoveRequest
+	In   *pkg.DeviceRemoveRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceRemoveRequest
+		In   *pkg.DeviceRemoveRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceRemove.RLock()
@@ -960,13 +961,13 @@ func (mock *CentrifugoApiClientMock) DeviceRemoveCalls() []struct {
 }
 
 // DeviceTopicList calls DeviceTopicListFunc.
-func (mock *CentrifugoApiClientMock) DeviceTopicList(ctx context.Context, in *DeviceTopicListRequest, opts ...grpc.CallOption) (*DeviceTopicListResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceTopicList(ctx context.Context, in *pkg.DeviceTopicListRequest, opts ...grpc.CallOption) (*pkg.DeviceTopicListResponse, error) {
 	if mock.DeviceTopicListFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceTopicListFunc: method is nil but CentrifugoApiClient.DeviceTopicList was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceTopicListRequest
+		In   *pkg.DeviceTopicListRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -985,12 +986,12 @@ func (mock *CentrifugoApiClientMock) DeviceTopicList(ctx context.Context, in *De
 //	len(mockedCentrifugoApiClient.DeviceTopicListCalls())
 func (mock *CentrifugoApiClientMock) DeviceTopicListCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceTopicListRequest
+	In   *pkg.DeviceTopicListRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceTopicListRequest
+		In   *pkg.DeviceTopicListRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceTopicList.RLock()
@@ -1000,13 +1001,13 @@ func (mock *CentrifugoApiClientMock) DeviceTopicListCalls() []struct {
 }
 
 // DeviceTopicUpdate calls DeviceTopicUpdateFunc.
-func (mock *CentrifugoApiClientMock) DeviceTopicUpdate(ctx context.Context, in *DeviceTopicUpdateRequest, opts ...grpc.CallOption) (*DeviceTopicUpdateResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceTopicUpdate(ctx context.Context, in *pkg.DeviceTopicUpdateRequest, opts ...grpc.CallOption) (*pkg.DeviceTopicUpdateResponse, error) {
 	if mock.DeviceTopicUpdateFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceTopicUpdateFunc: method is nil but CentrifugoApiClient.DeviceTopicUpdate was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceTopicUpdateRequest
+		In   *pkg.DeviceTopicUpdateRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1025,12 +1026,12 @@ func (mock *CentrifugoApiClientMock) DeviceTopicUpdate(ctx context.Context, in *
 //	len(mockedCentrifugoApiClient.DeviceTopicUpdateCalls())
 func (mock *CentrifugoApiClientMock) DeviceTopicUpdateCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceTopicUpdateRequest
+	In   *pkg.DeviceTopicUpdateRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceTopicUpdateRequest
+		In   *pkg.DeviceTopicUpdateRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceTopicUpdate.RLock()
@@ -1040,13 +1041,13 @@ func (mock *CentrifugoApiClientMock) DeviceTopicUpdateCalls() []struct {
 }
 
 // DeviceUpdate calls DeviceUpdateFunc.
-func (mock *CentrifugoApiClientMock) DeviceUpdate(ctx context.Context, in *DeviceUpdateRequest, opts ...grpc.CallOption) (*DeviceUpdateResponse, error) {
+func (mock *CentrifugoApiClientMock) DeviceUpdate(ctx context.Context, in *pkg.DeviceUpdateRequest, opts ...grpc.CallOption) (*pkg.DeviceUpdateResponse, error) {
 	if mock.DeviceUpdateFunc == nil {
 		panic("CentrifugoApiClientMock.DeviceUpdateFunc: method is nil but CentrifugoApiClient.DeviceUpdate was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DeviceUpdateRequest
+		In   *pkg.DeviceUpdateRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1065,12 +1066,12 @@ func (mock *CentrifugoApiClientMock) DeviceUpdate(ctx context.Context, in *Devic
 //	len(mockedCentrifugoApiClient.DeviceUpdateCalls())
 func (mock *CentrifugoApiClientMock) DeviceUpdateCalls() []struct {
 	Ctx  context.Context
-	In   *DeviceUpdateRequest
+	In   *pkg.DeviceUpdateRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DeviceUpdateRequest
+		In   *pkg.DeviceUpdateRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDeviceUpdate.RLock()
@@ -1080,13 +1081,13 @@ func (mock *CentrifugoApiClientMock) DeviceUpdateCalls() []struct {
 }
 
 // Disconnect calls DisconnectFunc.
-func (mock *CentrifugoApiClientMock) Disconnect(ctx context.Context, in *DisconnectRequest, opts ...grpc.CallOption) (*DisconnectResponse, error) {
+func (mock *CentrifugoApiClientMock) Disconnect(ctx context.Context, in *pkg.DisconnectRequest, opts ...grpc.CallOption) (*pkg.DisconnectResponse, error) {
 	if mock.DisconnectFunc == nil {
 		panic("CentrifugoApiClientMock.DisconnectFunc: method is nil but CentrifugoApiClient.Disconnect was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *DisconnectRequest
+		In   *pkg.DisconnectRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1105,12 +1106,12 @@ func (mock *CentrifugoApiClientMock) Disconnect(ctx context.Context, in *Disconn
 //	len(mockedCentrifugoApiClient.DisconnectCalls())
 func (mock *CentrifugoApiClientMock) DisconnectCalls() []struct {
 	Ctx  context.Context
-	In   *DisconnectRequest
+	In   *pkg.DisconnectRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *DisconnectRequest
+		In   *pkg.DisconnectRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockDisconnect.RLock()
@@ -1120,13 +1121,13 @@ func (mock *CentrifugoApiClientMock) DisconnectCalls() []struct {
 }
 
 // GetUserStatus calls GetUserStatusFunc.
-func (mock *CentrifugoApiClientMock) GetUserStatus(ctx context.Context, in *GetUserStatusRequest, opts ...grpc.CallOption) (*GetUserStatusResponse, error) {
+func (mock *CentrifugoApiClientMock) GetUserStatus(ctx context.Context, in *pkg.GetUserStatusRequest, opts ...grpc.CallOption) (*pkg.GetUserStatusResponse, error) {
 	if mock.GetUserStatusFunc == nil {
 		panic("CentrifugoApiClientMock.GetUserStatusFunc: method is nil but CentrifugoApiClient.GetUserStatus was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *GetUserStatusRequest
+		In   *pkg.GetUserStatusRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1145,12 +1146,12 @@ func (mock *CentrifugoApiClientMock) GetUserStatus(ctx context.Context, in *GetU
 //	len(mockedCentrifugoApiClient.GetUserStatusCalls())
 func (mock *CentrifugoApiClientMock) GetUserStatusCalls() []struct {
 	Ctx  context.Context
-	In   *GetUserStatusRequest
+	In   *pkg.GetUserStatusRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *GetUserStatusRequest
+		In   *pkg.GetUserStatusRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockGetUserStatus.RLock()
@@ -1160,13 +1161,13 @@ func (mock *CentrifugoApiClientMock) GetUserStatusCalls() []struct {
 }
 
 // History calls HistoryFunc.
-func (mock *CentrifugoApiClientMock) History(ctx context.Context, in *HistoryRequest, opts ...grpc.CallOption) (*HistoryResponse, error) {
+func (mock *CentrifugoApiClientMock) History(ctx context.Context, in *pkg.HistoryRequest, opts ...grpc.CallOption) (*pkg.HistoryResponse, error) {
 	if mock.HistoryFunc == nil {
 		panic("CentrifugoApiClientMock.HistoryFunc: method is nil but CentrifugoApiClient.History was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *HistoryRequest
+		In   *pkg.HistoryRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1185,12 +1186,12 @@ func (mock *CentrifugoApiClientMock) History(ctx context.Context, in *HistoryReq
 //	len(mockedCentrifugoApiClient.HistoryCalls())
 func (mock *CentrifugoApiClientMock) HistoryCalls() []struct {
 	Ctx  context.Context
-	In   *HistoryRequest
+	In   *pkg.HistoryRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *HistoryRequest
+		In   *pkg.HistoryRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockHistory.RLock()
@@ -1200,13 +1201,13 @@ func (mock *CentrifugoApiClientMock) HistoryCalls() []struct {
 }
 
 // HistoryRemove calls HistoryRemoveFunc.
-func (mock *CentrifugoApiClientMock) HistoryRemove(ctx context.Context, in *HistoryRemoveRequest, opts ...grpc.CallOption) (*HistoryRemoveResponse, error) {
+func (mock *CentrifugoApiClientMock) HistoryRemove(ctx context.Context, in *pkg.HistoryRemoveRequest, opts ...grpc.CallOption) (*pkg.HistoryRemoveResponse, error) {
 	if mock.HistoryRemoveFunc == nil {
 		panic("CentrifugoApiClientMock.HistoryRemoveFunc: method is nil but CentrifugoApiClient.HistoryRemove was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *HistoryRemoveRequest
+		In   *pkg.HistoryRemoveRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1225,12 +1226,12 @@ func (mock *CentrifugoApiClientMock) HistoryRemove(ctx context.Context, in *Hist
 //	len(mockedCentrifugoApiClient.HistoryRemoveCalls())
 func (mock *CentrifugoApiClientMock) HistoryRemoveCalls() []struct {
 	Ctx  context.Context
-	In   *HistoryRemoveRequest
+	In   *pkg.HistoryRemoveRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *HistoryRemoveRequest
+		In   *pkg.HistoryRemoveRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockHistoryRemove.RLock()
@@ -1240,13 +1241,13 @@ func (mock *CentrifugoApiClientMock) HistoryRemoveCalls() []struct {
 }
 
 // Info calls InfoFunc.
-func (mock *CentrifugoApiClientMock) Info(ctx context.Context, in *InfoRequest, opts ...grpc.CallOption) (*InfoResponse, error) {
+func (mock *CentrifugoApiClientMock) Info(ctx context.Context, in *pkg.InfoRequest, opts ...grpc.CallOption) (*pkg.InfoResponse, error) {
 	if mock.InfoFunc == nil {
 		panic("CentrifugoApiClientMock.InfoFunc: method is nil but CentrifugoApiClient.Info was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *InfoRequest
+		In   *pkg.InfoRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1265,12 +1266,12 @@ func (mock *CentrifugoApiClientMock) Info(ctx context.Context, in *InfoRequest, 
 //	len(mockedCentrifugoApiClient.InfoCalls())
 func (mock *CentrifugoApiClientMock) InfoCalls() []struct {
 	Ctx  context.Context
-	In   *InfoRequest
+	In   *pkg.InfoRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *InfoRequest
+		In   *pkg.InfoRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockInfo.RLock()
@@ -1280,13 +1281,13 @@ func (mock *CentrifugoApiClientMock) InfoCalls() []struct {
 }
 
 // InvalidateUserTokens calls InvalidateUserTokensFunc.
-func (mock *CentrifugoApiClientMock) InvalidateUserTokens(ctx context.Context, in *InvalidateUserTokensRequest, opts ...grpc.CallOption) (*InvalidateUserTokensResponse, error) {
+func (mock *CentrifugoApiClientMock) InvalidateUserTokens(ctx context.Context, in *pkg.InvalidateUserTokensRequest, opts ...grpc.CallOption) (*pkg.InvalidateUserTokensResponse, error) {
 	if mock.InvalidateUserTokensFunc == nil {
 		panic("CentrifugoApiClientMock.InvalidateUserTokensFunc: method is nil but CentrifugoApiClient.InvalidateUserTokens was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *InvalidateUserTokensRequest
+		In   *pkg.InvalidateUserTokensRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1305,12 +1306,12 @@ func (mock *CentrifugoApiClientMock) InvalidateUserTokens(ctx context.Context, i
 //	len(mockedCentrifugoApiClient.InvalidateUserTokensCalls())
 func (mock *CentrifugoApiClientMock) InvalidateUserTokensCalls() []struct {
 	Ctx  context.Context
-	In   *InvalidateUserTokensRequest
+	In   *pkg.InvalidateUserTokensRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *InvalidateUserTokensRequest
+		In   *pkg.InvalidateUserTokensRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockInvalidateUserTokens.RLock()
@@ -1320,13 +1321,13 @@ func (mock *CentrifugoApiClientMock) InvalidateUserTokensCalls() []struct {
 }
 
 // Presence calls PresenceFunc.
-func (mock *CentrifugoApiClientMock) Presence(ctx context.Context, in *PresenceRequest, opts ...grpc.CallOption) (*PresenceResponse, error) {
+func (mock *CentrifugoApiClientMock) Presence(ctx context.Context, in *pkg.PresenceRequest, opts ...grpc.CallOption) (*pkg.PresenceResponse, error) {
 	if mock.PresenceFunc == nil {
 		panic("CentrifugoApiClientMock.PresenceFunc: method is nil but CentrifugoApiClient.Presence was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *PresenceRequest
+		In   *pkg.PresenceRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1345,12 +1346,12 @@ func (mock *CentrifugoApiClientMock) Presence(ctx context.Context, in *PresenceR
 //	len(mockedCentrifugoApiClient.PresenceCalls())
 func (mock *CentrifugoApiClientMock) PresenceCalls() []struct {
 	Ctx  context.Context
-	In   *PresenceRequest
+	In   *pkg.PresenceRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *PresenceRequest
+		In   *pkg.PresenceRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockPresence.RLock()
@@ -1360,13 +1361,13 @@ func (mock *CentrifugoApiClientMock) PresenceCalls() []struct {
 }
 
 // PresenceStats calls PresenceStatsFunc.
-func (mock *CentrifugoApiClientMock) PresenceStats(ctx context.Context, in *PresenceStatsRequest, opts ...grpc.CallOption) (*PresenceStatsResponse, error) {
+func (mock *CentrifugoApiClientMock) PresenceStats(ctx context.Context, in *pkg.PresenceStatsRequest, opts ...grpc.CallOption) (*pkg.PresenceStatsResponse, error) {
 	if mock.PresenceStatsFunc == nil {
 		panic("CentrifugoApiClientMock.PresenceStatsFunc: method is nil but CentrifugoApiClient.PresenceStats was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *PresenceStatsRequest
+		In   *pkg.PresenceStatsRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1385,12 +1386,12 @@ func (mock *CentrifugoApiClientMock) PresenceStats(ctx context.Context, in *Pres
 //	len(mockedCentrifugoApiClient.PresenceStatsCalls())
 func (mock *CentrifugoApiClientMock) PresenceStatsCalls() []struct {
 	Ctx  context.Context
-	In   *PresenceStatsRequest
+	In   *pkg.PresenceStatsRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *PresenceStatsRequest
+		In   *pkg.PresenceStatsRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockPresenceStats.RLock()
@@ -1400,13 +1401,13 @@ func (mock *CentrifugoApiClientMock) PresenceStatsCalls() []struct {
 }
 
 // Publish calls PublishFunc.
-func (mock *CentrifugoApiClientMock) Publish(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*PublishResponse, error) {
+func (mock *CentrifugoApiClientMock) Publish(ctx context.Context, in *pkg.PublishRequest, opts ...grpc.CallOption) (*pkg.PublishResponse, error) {
 	if mock.PublishFunc == nil {
 		panic("CentrifugoApiClientMock.PublishFunc: method is nil but CentrifugoApiClient.Publish was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *PublishRequest
+		In   *pkg.PublishRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1425,12 +1426,12 @@ func (mock *CentrifugoApiClientMock) Publish(ctx context.Context, in *PublishReq
 //	len(mockedCentrifugoApiClient.PublishCalls())
 func (mock *CentrifugoApiClientMock) PublishCalls() []struct {
 	Ctx  context.Context
-	In   *PublishRequest
+	In   *pkg.PublishRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *PublishRequest
+		In   *pkg.PublishRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockPublish.RLock()
@@ -1440,13 +1441,13 @@ func (mock *CentrifugoApiClientMock) PublishCalls() []struct {
 }
 
 // RPC calls RPCFunc.
-func (mock *CentrifugoApiClientMock) RPC(ctx context.Context, in *RPCRequest, opts ...grpc.CallOption) (*RPCResponse, error) {
+func (mock *CentrifugoApiClientMock) RPC(ctx context.Context, in *pkg.RPCRequest, opts ...grpc.CallOption) (*pkg.RPCResponse, error) {
 	if mock.RPCFunc == nil {
 		panic("CentrifugoApiClientMock.RPCFunc: method is nil but CentrifugoApiClient.RPC was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *RPCRequest
+		In   *pkg.RPCRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1465,12 +1466,12 @@ func (mock *CentrifugoApiClientMock) RPC(ctx context.Context, in *RPCRequest, op
 //	len(mockedCentrifugoApiClient.RPCCalls())
 func (mock *CentrifugoApiClientMock) RPCCalls() []struct {
 	Ctx  context.Context
-	In   *RPCRequest
+	In   *pkg.RPCRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *RPCRequest
+		In   *pkg.RPCRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockRPC.RLock()
@@ -1480,13 +1481,13 @@ func (mock *CentrifugoApiClientMock) RPCCalls() []struct {
 }
 
 // Refresh calls RefreshFunc.
-func (mock *CentrifugoApiClientMock) Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error) {
+func (mock *CentrifugoApiClientMock) Refresh(ctx context.Context, in *pkg.RefreshRequest, opts ...grpc.CallOption) (*pkg.RefreshResponse, error) {
 	if mock.RefreshFunc == nil {
 		panic("CentrifugoApiClientMock.RefreshFunc: method is nil but CentrifugoApiClient.Refresh was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *RefreshRequest
+		In   *pkg.RefreshRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1505,12 +1506,12 @@ func (mock *CentrifugoApiClientMock) Refresh(ctx context.Context, in *RefreshReq
 //	len(mockedCentrifugoApiClient.RefreshCalls())
 func (mock *CentrifugoApiClientMock) RefreshCalls() []struct {
 	Ctx  context.Context
-	In   *RefreshRequest
+	In   *pkg.RefreshRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *RefreshRequest
+		In   *pkg.RefreshRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockRefresh.RLock()
@@ -1520,13 +1521,13 @@ func (mock *CentrifugoApiClientMock) RefreshCalls() []struct {
 }
 
 // RevokeToken calls RevokeTokenFunc.
-func (mock *CentrifugoApiClientMock) RevokeToken(ctx context.Context, in *RevokeTokenRequest, opts ...grpc.CallOption) (*RevokeTokenResponse, error) {
+func (mock *CentrifugoApiClientMock) RevokeToken(ctx context.Context, in *pkg.RevokeTokenRequest, opts ...grpc.CallOption) (*pkg.RevokeTokenResponse, error) {
 	if mock.RevokeTokenFunc == nil {
 		panic("CentrifugoApiClientMock.RevokeTokenFunc: method is nil but CentrifugoApiClient.RevokeToken was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *RevokeTokenRequest
+		In   *pkg.RevokeTokenRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1545,12 +1546,12 @@ func (mock *CentrifugoApiClientMock) RevokeToken(ctx context.Context, in *Revoke
 //	len(mockedCentrifugoApiClient.RevokeTokenCalls())
 func (mock *CentrifugoApiClientMock) RevokeTokenCalls() []struct {
 	Ctx  context.Context
-	In   *RevokeTokenRequest
+	In   *pkg.RevokeTokenRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *RevokeTokenRequest
+		In   *pkg.RevokeTokenRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockRevokeToken.RLock()
@@ -1560,13 +1561,13 @@ func (mock *CentrifugoApiClientMock) RevokeTokenCalls() []struct {
 }
 
 // SendPushNotification calls SendPushNotificationFunc.
-func (mock *CentrifugoApiClientMock) SendPushNotification(ctx context.Context, in *SendPushNotificationRequest, opts ...grpc.CallOption) (*SendPushNotificationResponse, error) {
+func (mock *CentrifugoApiClientMock) SendPushNotification(ctx context.Context, in *pkg.SendPushNotificationRequest, opts ...grpc.CallOption) (*pkg.SendPushNotificationResponse, error) {
 	if mock.SendPushNotificationFunc == nil {
 		panic("CentrifugoApiClientMock.SendPushNotificationFunc: method is nil but CentrifugoApiClient.SendPushNotification was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *SendPushNotificationRequest
+		In   *pkg.SendPushNotificationRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1585,12 +1586,12 @@ func (mock *CentrifugoApiClientMock) SendPushNotification(ctx context.Context, i
 //	len(mockedCentrifugoApiClient.SendPushNotificationCalls())
 func (mock *CentrifugoApiClientMock) SendPushNotificationCalls() []struct {
 	Ctx  context.Context
-	In   *SendPushNotificationRequest
+	In   *pkg.SendPushNotificationRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *SendPushNotificationRequest
+		In   *pkg.SendPushNotificationRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockSendPushNotification.RLock()
@@ -1600,13 +1601,13 @@ func (mock *CentrifugoApiClientMock) SendPushNotificationCalls() []struct {
 }
 
 // Subscribe calls SubscribeFunc.
-func (mock *CentrifugoApiClientMock) Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*SubscribeResponse, error) {
+func (mock *CentrifugoApiClientMock) Subscribe(ctx context.Context, in *pkg.SubscribeRequest, opts ...grpc.CallOption) (*pkg.SubscribeResponse, error) {
 	if mock.SubscribeFunc == nil {
 		panic("CentrifugoApiClientMock.SubscribeFunc: method is nil but CentrifugoApiClient.Subscribe was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *SubscribeRequest
+		In   *pkg.SubscribeRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1625,12 +1626,12 @@ func (mock *CentrifugoApiClientMock) Subscribe(ctx context.Context, in *Subscrib
 //	len(mockedCentrifugoApiClient.SubscribeCalls())
 func (mock *CentrifugoApiClientMock) SubscribeCalls() []struct {
 	Ctx  context.Context
-	In   *SubscribeRequest
+	In   *pkg.SubscribeRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *SubscribeRequest
+		In   *pkg.SubscribeRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockSubscribe.RLock()
@@ -1640,13 +1641,13 @@ func (mock *CentrifugoApiClientMock) SubscribeCalls() []struct {
 }
 
 // UnblockUser calls UnblockUserFunc.
-func (mock *CentrifugoApiClientMock) UnblockUser(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error) {
+func (mock *CentrifugoApiClientMock) UnblockUser(ctx context.Context, in *pkg.UnblockUserRequest, opts ...grpc.CallOption) (*pkg.UnblockUserResponse, error) {
 	if mock.UnblockUserFunc == nil {
 		panic("CentrifugoApiClientMock.UnblockUserFunc: method is nil but CentrifugoApiClient.UnblockUser was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UnblockUserRequest
+		In   *pkg.UnblockUserRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1665,12 +1666,12 @@ func (mock *CentrifugoApiClientMock) UnblockUser(ctx context.Context, in *Unbloc
 //	len(mockedCentrifugoApiClient.UnblockUserCalls())
 func (mock *CentrifugoApiClientMock) UnblockUserCalls() []struct {
 	Ctx  context.Context
-	In   *UnblockUserRequest
+	In   *pkg.UnblockUserRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UnblockUserRequest
+		In   *pkg.UnblockUserRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUnblockUser.RLock()
@@ -1680,13 +1681,13 @@ func (mock *CentrifugoApiClientMock) UnblockUserCalls() []struct {
 }
 
 // Unsubscribe calls UnsubscribeFunc.
-func (mock *CentrifugoApiClientMock) Unsubscribe(ctx context.Context, in *UnsubscribeRequest, opts ...grpc.CallOption) (*UnsubscribeResponse, error) {
+func (mock *CentrifugoApiClientMock) Unsubscribe(ctx context.Context, in *pkg.UnsubscribeRequest, opts ...grpc.CallOption) (*pkg.UnsubscribeResponse, error) {
 	if mock.UnsubscribeFunc == nil {
 		panic("CentrifugoApiClientMock.UnsubscribeFunc: method is nil but CentrifugoApiClient.Unsubscribe was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UnsubscribeRequest
+		In   *pkg.UnsubscribeRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1705,12 +1706,12 @@ func (mock *CentrifugoApiClientMock) Unsubscribe(ctx context.Context, in *Unsubs
 //	len(mockedCentrifugoApiClient.UnsubscribeCalls())
 func (mock *CentrifugoApiClientMock) UnsubscribeCalls() []struct {
 	Ctx  context.Context
-	In   *UnsubscribeRequest
+	In   *pkg.UnsubscribeRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UnsubscribeRequest
+		In   *pkg.UnsubscribeRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUnsubscribe.RLock()
@@ -1720,13 +1721,13 @@ func (mock *CentrifugoApiClientMock) UnsubscribeCalls() []struct {
 }
 
 // UpdatePushStatus calls UpdatePushStatusFunc.
-func (mock *CentrifugoApiClientMock) UpdatePushStatus(ctx context.Context, in *UpdatePushStatusRequest, opts ...grpc.CallOption) (*UpdatePushStatusResponse, error) {
+func (mock *CentrifugoApiClientMock) UpdatePushStatus(ctx context.Context, in *pkg.UpdatePushStatusRequest, opts ...grpc.CallOption) (*pkg.UpdatePushStatusResponse, error) {
 	if mock.UpdatePushStatusFunc == nil {
 		panic("CentrifugoApiClientMock.UpdatePushStatusFunc: method is nil but CentrifugoApiClient.UpdatePushStatus was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UpdatePushStatusRequest
+		In   *pkg.UpdatePushStatusRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1745,12 +1746,12 @@ func (mock *CentrifugoApiClientMock) UpdatePushStatus(ctx context.Context, in *U
 //	len(mockedCentrifugoApiClient.UpdatePushStatusCalls())
 func (mock *CentrifugoApiClientMock) UpdatePushStatusCalls() []struct {
 	Ctx  context.Context
-	In   *UpdatePushStatusRequest
+	In   *pkg.UpdatePushStatusRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UpdatePushStatusRequest
+		In   *pkg.UpdatePushStatusRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUpdatePushStatus.RLock()
@@ -1760,13 +1761,13 @@ func (mock *CentrifugoApiClientMock) UpdatePushStatusCalls() []struct {
 }
 
 // UpdateUserStatus calls UpdateUserStatusFunc.
-func (mock *CentrifugoApiClientMock) UpdateUserStatus(ctx context.Context, in *UpdateUserStatusRequest, opts ...grpc.CallOption) (*UpdateUserStatusResponse, error) {
+func (mock *CentrifugoApiClientMock) UpdateUserStatus(ctx context.Context, in *pkg.UpdateUserStatusRequest, opts ...grpc.CallOption) (*pkg.UpdateUserStatusResponse, error) {
 	if mock.UpdateUserStatusFunc == nil {
 		panic("CentrifugoApiClientMock.UpdateUserStatusFunc: method is nil but CentrifugoApiClient.UpdateUserStatus was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UpdateUserStatusRequest
+		In   *pkg.UpdateUserStatusRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1785,12 +1786,12 @@ func (mock *CentrifugoApiClientMock) UpdateUserStatus(ctx context.Context, in *U
 //	len(mockedCentrifugoApiClient.UpdateUserStatusCalls())
 func (mock *CentrifugoApiClientMock) UpdateUserStatusCalls() []struct {
 	Ctx  context.Context
-	In   *UpdateUserStatusRequest
+	In   *pkg.UpdateUserStatusRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UpdateUserStatusRequest
+		In   *pkg.UpdateUserStatusRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUpdateUserStatus.RLock()
@@ -1800,13 +1801,13 @@ func (mock *CentrifugoApiClientMock) UpdateUserStatusCalls() []struct {
 }
 
 // UserTopicList calls UserTopicListFunc.
-func (mock *CentrifugoApiClientMock) UserTopicList(ctx context.Context, in *UserTopicListRequest, opts ...grpc.CallOption) (*UserTopicListResponse, error) {
+func (mock *CentrifugoApiClientMock) UserTopicList(ctx context.Context, in *pkg.UserTopicListRequest, opts ...grpc.CallOption) (*pkg.UserTopicListResponse, error) {
 	if mock.UserTopicListFunc == nil {
 		panic("CentrifugoApiClientMock.UserTopicListFunc: method is nil but CentrifugoApiClient.UserTopicList was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UserTopicListRequest
+		In   *pkg.UserTopicListRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1825,12 +1826,12 @@ func (mock *CentrifugoApiClientMock) UserTopicList(ctx context.Context, in *User
 //	len(mockedCentrifugoApiClient.UserTopicListCalls())
 func (mock *CentrifugoApiClientMock) UserTopicListCalls() []struct {
 	Ctx  context.Context
-	In   *UserTopicListRequest
+	In   *pkg.UserTopicListRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UserTopicListRequest
+		In   *pkg.UserTopicListRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUserTopicList.RLock()
@@ -1840,13 +1841,13 @@ func (mock *CentrifugoApiClientMock) UserTopicListCalls() []struct {
 }
 
 // UserTopicUpdate calls UserTopicUpdateFunc.
-func (mock *CentrifugoApiClientMock) UserTopicUpdate(ctx context.Context, in *UserTopicUpdateRequest, opts ...grpc.CallOption) (*UserTopicUpdateResponse, error) {
+func (mock *CentrifugoApiClientMock) UserTopicUpdate(ctx context.Context, in *pkg.UserTopicUpdateRequest, opts ...grpc.CallOption) (*pkg.UserTopicUpdateResponse, error) {
 	if mock.UserTopicUpdateFunc == nil {
 		panic("CentrifugoApiClientMock.UserTopicUpdateFunc: method is nil but CentrifugoApiClient.UserTopicUpdate was just called")
 	}
 	callInfo := struct {
 		Ctx  context.Context
-		In   *UserTopicUpdateRequest
+		In   *pkg.UserTopicUpdateRequest
 		Opts []grpc.CallOption
 	}{
 		Ctx:  ctx,
@@ -1865,12 +1866,12 @@ func (mock *CentrifugoApiClientMock) UserTopicUpdate(ctx context.Context, in *Us
 //	len(mockedCentrifugoApiClient.UserTopicUpdateCalls())
 func (mock *CentrifugoApiClientMock) UserTopicUpdateCalls() []struct {
 	Ctx  context.Context
-	In   *UserTopicUpdateRequest
+	In   *pkg.UserTopicUpdateRequest
 	Opts []grpc.CallOption
 } {
 	var calls []struct {
 		Ctx  context.Context
-		In   *UserTopicUpdateRequest
+		In   *pkg.UserTopicUpdateRequest
 		Opts []grpc.CallOption
 	}
 	mock.lockUserTopicUpdate.RLock()

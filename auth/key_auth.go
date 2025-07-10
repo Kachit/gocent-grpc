@@ -1,9 +1,10 @@
-package apiproto
+package auth
 
 import "context"
 
 type KeyAuth struct {
-	Key string
+	Key               string
+	TransportSecurity bool
 }
 
 func (t KeyAuth) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
@@ -13,5 +14,5 @@ func (t KeyAuth) GetRequestMetadata(ctx context.Context, uri ...string) (map[str
 }
 
 func (t KeyAuth) RequireTransportSecurity() bool {
-	return false
+	return t.TransportSecurity
 }

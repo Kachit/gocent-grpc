@@ -4,7 +4,7 @@
 // 	protoc        v5.27.3
 // source: proto/api.proto
 
-package apiproto
+package pkg
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
