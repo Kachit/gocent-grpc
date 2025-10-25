@@ -1,11 +1,11 @@
 # Centrifugo gRPC golang sdk
-[![Pipeline status](https://github.com/kachit/centrifugo-grpc-api/badges/master/pipeline.svg)](https://github.com/kachit/centrifugo-grpc-api/commits/master)
-[![Coverage report](https://github.com/kachit/centrifugo-grpc-api/badges/master/coverage.svg)](https://github.com/kachit/centrifugo-grpc-api/commits/master)
-[![Latest Release](https://github.com/kachit/centrifugo-grpc-api/-/badges/release.svg)](https://github.com/kachit/centrifugo-grpc-api/-/releases)
+[![Pipeline status](https://github.com/kachit/gocent-grpc/badges/master/pipeline.svg)](https://github.com/kachit/gocent-grpc/commits/master)
+[![Coverage report](https://github.com/kachit/gocent-grpc/badges/master/coverage.svg)](https://github.com/kachit/gocent-grpc/commits/master)
+[![Latest Release](https://github.com/kachit/gocent-grpc/-/badges/release.svg)](https://github.com/kachit/gocent-grpc/-/releases)
 
 ## Install
 ```shell
-go get -u github.com/kachit/centrifugo-grpc-api
+go get -u github.com/kachit/gocent-grpc
 ```
 
 ## Usage (Client)
@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kachit/centrifugo-grpc-api/auth"
-	pb "github.com/kachit/centrifugo-grpc-api/pkg"
+	"github.com/kachit/gocent-grpc/auth"
+	pb "github.com/kachit/gocent-grpc/pkg"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -33,6 +33,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	
 	defer conn.Close()
 
 	ctx, cancel := context.WithCancel(context.Background())
@@ -41,11 +42,12 @@ func main() {
 	req := &pb.PresenceRequest{Channel: "channel-name"}
 	//
 	client := pb.NewCentrifugoApiClient(conn)
+	
 	result, err := client.Presence(ctx, req)
-
 	if err != nil {
 		log.Fatal(err)
 	}
+	
 	fmt.Println(result)
 }
 ```
