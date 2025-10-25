@@ -3,7 +3,7 @@ proto.download: ## download latest proto file
 	curl -o ./proto/api.proto https://raw.githubusercontent.com/centrifugal/centrifugo/master/internal/apiproto/api.proto
 
 proto.generate: ## generate proto files
-	protoc --go_out=. --go-grpc_out=. --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
+	protoc --go_out=pkg --proto_path=proto --go-grpc_out=pkg --go-grpc_opt=paths=source_relative --go_opt=paths=source_relative proto/*.proto
 ## Tests
 tests.unit: ## run unit tests
 	go test ./...
