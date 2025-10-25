@@ -1,4 +1,4 @@
-module github.com/kachit/centrifugo-grpc-api
+module github.com/kachit/gocent-grpc
 
 go 1.24.0
 

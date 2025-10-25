@@ -5,9 +5,10 @@ package apiproto
 
 import (
 	context "context"
-	"github.com/kachit/centrifugo-grpc-api/pkg"
-	grpc "google.golang.org/grpc"
 	sync "sync"
+
+	pkg "github.com/kachit/gocent-grpc/pkg"
+	grpc "google.golang.org/grpc"
 )
 
 // Ensure, that CentrifugoApiClientMock does implement CentrifugoApiClient.
