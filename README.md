@@ -16,11 +16,12 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/kachit/centrifugo-grpc-api/pkg"
+	"log"
+
 	"github.com/kachit/centrifugo-grpc-api/auth"
+	pb "github.com/kachit/centrifugo-grpc-api/pkg"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	"log"
 )
 
 func main() {
