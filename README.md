@@ -1,7 +1,10 @@
 # Centrifugo gRPC golang sdk
-[![Pipeline status](https://github.com/kachit/gocent-grpc/badges/master/pipeline.svg)](https://github.com/kachit/gocent-grpc/commits/master)
-[![Coverage report](https://github.com/kachit/gocent-grpc/badges/master/coverage.svg)](https://github.com/kachit/gocent-grpc/commits/master)
-[![Latest Release](https://github.com/kachit/gocent-grpc/-/badges/release.svg)](https://github.com/kachit/gocent-grpc/-/releases)
+[![Go Test](https://github.com/Kachit/gocent-grpc/actions/workflows/tests.yml/badge.svg)](https://github.com/Kachit/gocent-grpc/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kachit/gocent-grpc)](https://goreportcard.com/report/github.com/kachit/gocent-grpc)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/Kachit/gocent-grpc)](https://go.dev/doc/go1.24)
+[![Release](https://img.shields.io/github/v/release/Kachit/gocent-grpc.svg)](https://github.com/Kachit/gocent-grpc/releases)
+[![GoDoc](https://img.shields.io/badge/go.dev-reference-brightgreen?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/kachit/gocent-grpc)
+[![License](https://img.shields.io/github/license/Kachit/gocent-grpc)](https://github.com/Kachit/gocent-grpc/blob/master/LICENSE)
 
 ## Install
 ```shell
